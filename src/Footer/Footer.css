@@ -1,0 +1,9 @@
+footer {
+  padding: 30px 10px;
+  border-top: 1px solid #158cba;
+}
+
+footer a {
+  color: #158cba;
+  font-weight: bold;
+}

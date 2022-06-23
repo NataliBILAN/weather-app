@@ -35,7 +35,6 @@ export default function Weather() {
   }, []);
 
   const handleSubmit = (event) => {
-    event.preventDefault();
     getData();
   };
 
@@ -43,11 +42,21 @@ export default function Weather() {
     setCity(target.value);
   };
 
+  const handleEnterPush = ({ key }) => {
+    if (key === "Enter") {
+      getData();
+    }
+  };
+
   console.log("data", data);
 
   return (
     <>
-      <InputSearch onSubmit={handleSubmit} onChange={handleInputChange} />
+      <InputSearch
+        onClick={handleSubmit}
+        onChange={handleInputChange}
+        onKeyDown={handleEnterPush}
+      />
       {data ? <CurrentWeather data={data} /> : "Loading..."}
     </>
   );

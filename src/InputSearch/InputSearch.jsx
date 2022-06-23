@@ -1,17 +1,18 @@
 import React from "react";
 
-export default function InputSearch({ onChange, onSubmit }) {
+export default function InputSearch({ onChange, onClick, onKeyDown }) {
   return (
-    <form action="" className="search-form">
+    <div className="search-form">
       <input
         className="search-input shadow"
         type="text"
         placeholder="Type a city..."
         onChange={onChange}
+        onKeyDown={onKeyDown}
       />
-      <button type="submit" className="search-button" onSubmit={onSubmit}>
+      <button className="search-button" onClick={onClick}>
         Search
       </button>
-    </form>
+    </div>
   );
 }

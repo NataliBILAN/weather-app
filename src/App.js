@@ -1,19 +1,19 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 
 import Header from "./Header/index";
-import Form from "./Form/index";
-import Forecast from "./Forecast/index";
+import Weather from "./Weather/index";
 import Footer from "./Footer/index";
 
 import "./App.css";
 
 export default function App() {
+  const [error, setError] = useState(null);
+
   return (
     <div className="forecast-wrapper">
       <div className="container">
         <Header />
-        <Form />
-        <Forecast />
+        <Weather />
         <div>forecast</div>
         <Footer />
       </div>

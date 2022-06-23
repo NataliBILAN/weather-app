@@ -7,10 +7,11 @@
 }
 
 .forecast-wrapper {
-  width: 850px;
+  max-width: 850px;
   background-color: #ffffff;
   margin: 10px auto;
   padding: 20px;
+  border: 1px solid #158cba;
   box-shadow: 10px 10px 5px 0px rgba(187, 215, 217, 0.75);
   border-radius: 5px;
 }
@@ -94,16 +95,12 @@
   margin-bottom: 20px;
 }
 
+.precipitation,
 .humidity,
 .wind {
   font-size: 20px;
   font-weight: bold;
   color: #158cba;
-}
-
-#humidity,
-#wind {
-  font-size: 20px;
 }
 
 .forecast-list {
@@ -132,4 +129,9 @@
 
 .forecast-temperature-min {
   color: #158cba;
+}
+
+.current-time {
+  display: flex;
+  font-weight: 700;
 }

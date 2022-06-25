@@ -21,7 +21,7 @@ export default function Weather() {
         temperature: Math.round(data.main.temp),
         wind: Math.round(data.wind.speed),
         humidity: Math.round(data.main.humidity),
-        iconUrl: data.weather[0].icon,
+        icon: data.weather[0].icon,
         description: data.weather[0].description,
         city: data.name,
       });

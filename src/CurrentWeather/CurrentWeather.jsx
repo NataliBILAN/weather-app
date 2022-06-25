@@ -1,8 +1,9 @@
 import React from "react";
 import { getDay, getTime } from "../helpers/helpers";
+import WeatherIcon from "../WeatherIcon/WeatherIcon";
 
 export default function CurrentWeather({ data }) {
-  const { date, iconUrl, temperature, wind, humidity, description, city } =
+  const { date, icon, temperature, wind, humidity, description, city } =
     data;
 
   return (
@@ -20,7 +21,7 @@ export default function CurrentWeather({ data }) {
             <span className="temperature">{temperature}</span>
             <span className="units">°C</span>
           </div>
-          <img className="current-day-icon" alt="day-icon" src={iconUrl} />
+          <WeatherIcon icon={icon} size={60} />
         </div>
 
         <div className="column">

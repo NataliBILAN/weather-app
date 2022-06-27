@@ -1,0 +1,26 @@
+.weather-temperature {
+  color: #158cba;
+    font-weight: 700;
+
+}
+
+.temperature {
+  font-size: 38px;
+}
+
+.units {
+  position: relative;
+  bottom: 15px;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.unit-link {
+  text-decoration: none;
+  color: #000000;
+}
+
+.disabled-link {
+  pointer-events: none;
+  color: #158cba;
+}

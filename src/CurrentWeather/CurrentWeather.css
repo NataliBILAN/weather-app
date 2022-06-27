@@ -55,25 +55,15 @@
 .current-time {
   display: flex;
   font-weight: 700;
+  font-size: 20px;
 }
 
-.weak-day {
-  font-weight: bold;
-}
-
-.units {
-  position: relative;
-  bottom: 15px;
-  font-size: 14px;
-  font-weight: bold;
+.weekday {
+  margin-right: 15px;
 }
 
 #weather-desc {
   text-transform: capitalize;
-}
-
-.temperature {
-  font-size: 38px;
 }
 
 .humidity {
@@ -86,4 +76,9 @@
   font-size: 20px;
   font-weight: bold;
   color: #158cba;
+}
+
+
+.weather-temperature {
+    margin-right: 20px;
 }

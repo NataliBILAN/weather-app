@@ -48,8 +48,6 @@ export default function Weather() {
     }
   };
 
-  console.log("data", data);
-
   return (
     <>
       <InputSearch

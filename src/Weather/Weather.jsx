@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import InputSearch from "./../InputSearch";
 import CurrentWeather from "./../CurrentWeather";
 
@@ -7,12 +7,13 @@ import axios from "axios";
 export default function Weather() {
   const [data, setData] = useState(null);
   const [city, setCity] = useState("Rotterdam");
+  const [submitting, setSubmitting] = useState(true);
 
   const apiKey = "317060cebfc3d71d209b91e26b8129c0";
 
   const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
 
-  const getData = async () => {
+  const getData = useCallback(async () => {
     try {
       const { data } = await axios.get(url);
       setData({
@@ -28,13 +29,17 @@ export default function Weather() {
     } catch (error) {
       console.log(error.message);
     }
-  };
+  }, [url]);
 
   useEffect(() => {
-    getData();
-  }, []);
+    if (submitting) {
+      getData();
+      setSubmitting(false);
+    }
+  }, [getData, submitting]);
 
   const handleSubmit = (event) => {
+    event.preventDefault();
     getData();
   };
 
@@ -55,7 +60,7 @@ export default function Weather() {
         onChange={handleInputChange}
         onKeyDown={handleEnterPush}
       />
-      {data ? <CurrentWeather data={data} /> : "Loading..."}
+      {data ? <CurrentWeather data={data} /> : "Loading"}
     </>
   );
 }

@@ -1,6 +1,13 @@
 import React from "react";
 
-export default function InputSearch({ onChange, onClick, onKeyDown }) {
+export default function InputSearch({
+  onChange,
+  onClick,
+  onKeyDown,
+  isEmpty,
+  handleResetButtonClick,
+  value,
+}) {
   return (
     <div className="search-form">
       <input
@@ -9,7 +16,17 @@ export default function InputSearch({ onChange, onClick, onKeyDown }) {
         placeholder="Type a city..."
         onChange={onChange}
         onKeyDown={onKeyDown}
+        value={value}
       />
+      {isEmpty === false && (
+        <button
+          type="reset"
+          className="reset-button"
+          onClick={handleResetButtonClick}
+        >
+          &times;
+        </button>
+      )}
       <button className="search-button" onClick={onClick}>
         Search
       </button>

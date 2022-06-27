@@ -8,6 +8,7 @@ export default function Weather() {
   const [data, setData] = useState(null);
   const [city, setCity] = useState("Rotterdam");
   const [submitting, setSubmitting] = useState(true);
+  const [isEmpty, setIsEmpty] = useState(true);
 
   const apiKey = "317060cebfc3d71d209b91e26b8129c0";
 
@@ -41,24 +42,36 @@ export default function Weather() {
   const handleSubmit = (event) => {
     event.preventDefault();
     getData();
+    setCity("");
   };
 
   const handleInputChange = ({ target }) => {
     setCity(target.value);
+    setIsEmpty(false);
   };
 
-  const handleEnterPush = ({ key }) => {
+  const handleEnterClick = ({ key }) => {
     if (key === "Enter") {
       getData();
+      setIsEmpty(true);
+      setCity("");
     }
+  };
+
+  const handleResetButtonClick = () => {
+    setIsEmpty(true);
+    setCity("");
   };
 
   return (
     <>
       <InputSearch
         onClick={handleSubmit}
+        handleResetButtonClick={handleResetButtonClick}
         onChange={handleInputChange}
-        onKeyDown={handleEnterPush}
+        onKeyDown={handleEnterClick}
+        isEmpty={isEmpty}
+        value={city}
       />
       {data ? <CurrentWeather data={data} /> : "Loading"}
     </>

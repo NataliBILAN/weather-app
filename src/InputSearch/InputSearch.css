@@ -1,4 +1,5 @@
 .search-form {
+  position: relative;
   width: 650px;
   display: flex;
   margin: 10px 0 50px 0;
@@ -35,4 +36,23 @@
 
 .search-input:focus {
   outline: none;
+}
+
+.reset-button {
+  position: absolute;
+  border: none;
+  display: block;
+  width: 20px;
+  height: 20px;
+  line-height: 20px;
+  font-size: 20px;
+  top: 0;
+  bottom: 0;
+  left: 70%;
+  margin: auto;
+  background: transparent;
+  padding: 0;
+  outline: none;
+  cursor: pointer;
+  transition: 0.1s;
 }

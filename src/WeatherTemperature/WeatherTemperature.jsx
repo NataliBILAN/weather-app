@@ -18,29 +18,29 @@ export default function WeatherTemperature({ celsiusTemperature }) {
     setTemperature(celsiusTemperature);
   };
   return (
-      <div className="weather-temperature">
-        <span className="temperature">{temperature}</span>
-        <span className="units">
-          <a
-            href=""
-            onClick={handleClickToCelsius}
-            className={classNames("unit-link", {
-              "disabled-link": unit === "celsius",
-            })}
-          >
-            °C
-          </a>{" "}
-          |{" "}
-          <a
-            href=""
-            onClick={handleClickTofahrenheit}
-            className={classNames("unit-link", {
-              "disabled-link": unit === "fahrenheit",
-            })}
-          >
-            °F
-          </a>
-        </span>
-      </div>
+    <div className="weather-temperature">
+      <span className="temperature">{temperature}</span>
+      <span className="units">
+        <a
+          href="/"
+          onClick={handleClickToCelsius}
+          className={classNames("unit-link", {
+            "disabled-link": unit === "celsius",
+          })}
+        >
+          °C
+        </a>{" "}
+        |{" "}
+        <a
+          href="/"
+          onClick={handleClickTofahrenheit}
+          className={classNames("unit-link", {
+            "disabled-link": unit === "fahrenheit",
+          })}
+        >
+          °F
+        </a>
+      </span>
+    </div>
   );
 }

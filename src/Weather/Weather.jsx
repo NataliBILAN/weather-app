@@ -64,7 +64,7 @@ export default function Weather() {
   };
 
   const onFocusHandle = () => {
-    if (city !== "") setIsEmpty(true);
+    if (city !== "") setIsEmpty(false);
   };
   return (
     <>

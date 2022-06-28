@@ -63,6 +63,9 @@ export default function Weather() {
     setCity("");
   };
 
+  const onFocusHandle = () => {
+    if (city !== "") setIsEmpty(true);
+  };
   return (
     <>
       <InputSearch
@@ -72,6 +75,7 @@ export default function Weather() {
         onKeyDown={handleEnterClick}
         isEmpty={isEmpty}
         value={city}
+        onFocusHandle={onFocusHandle}
       />
       {data ? <CurrentWeather data={data} /> : "Loading"}
     </>

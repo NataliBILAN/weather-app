@@ -7,6 +7,7 @@ export default function InputSearch({
   isEmpty,
   handleResetButtonClick,
   value,
+  onFocusHandle,
 }) {
   return (
     <div className="search-form">
@@ -17,6 +18,7 @@ export default function InputSearch({
         onChange={onChange}
         onKeyDown={onKeyDown}
         value={value}
+        onFocus={onFocusHandle}
       />
       {isEmpty === false && (
         <button

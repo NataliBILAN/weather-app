@@ -1,0 +1,9 @@
+.forecast-wrapper {
+  max-width: 850px;
+  background-color: #ffffff;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #158cba;
+  box-shadow: 10px 10px 5px 0px rgba(187, 215, 217, 0.75);
+  border-radius: 5px;
+}

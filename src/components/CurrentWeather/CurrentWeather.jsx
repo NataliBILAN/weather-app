@@ -1,10 +1,11 @@
 import React from "react";
-import { getDay, getTime } from "../helpers/helpers";
+import { getDay, getTime } from "../../helpers/helpers";
 import WeatherIcon from "../WeatherIcon/WeatherIcon";
 import WeatherTemperature from "../WeatherTemperature";
 
-export default function CurrentWeather({ data }) {
-  const { date, icon, temperature, wind, humidity, description, city } = data;
+export default function CurrentWeather({ currentDayData }) {
+  const { date, icon, temperature, wind, humidity, description, city } =
+    currentDayData;
 
   return (
     <div>

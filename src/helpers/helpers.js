@@ -13,6 +13,15 @@ export function getDay(date) {
   return day;
 }
 
+export function getShortDay(date) {
+  const dayData = new Date(date * 1000);
+  const day = dayData.getDay();
+
+  const days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+
+  return days[day];
+}
+
 export function getTime(date) {
   let hours = date.getHours();
   if (hours < 10) {

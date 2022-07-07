@@ -1,19 +1,9 @@
 .current-city {
-  margin: 20px 0;
+  margin: 0;
   color: #158cba;
   text-transform: uppercase;
   font-size: 48px;
   font-weight: bold;
-}
-
-.forecast-wrapper {
-  max-width: 850px;
-  background-color: #ffffff;
-  margin: 10px auto;
-  padding: 20px;
-  border: 1px solid #158cba;
-  box-shadow: 10px 10px 5px 0px rgba(187, 215, 217, 0.75);
-  border-radius: 5px;
 }
 
 .city {

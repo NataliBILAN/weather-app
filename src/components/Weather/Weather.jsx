@@ -1,11 +1,12 @@
 import React, { useState, useEffect, useCallback } from "react";
 import InputSearch from "./../InputSearch";
 import CurrentWeather from "./../CurrentWeather";
+import WeatherForecast from "./../WeatherForecast";
 
 import axios from "axios";
 
 export default function Weather() {
-  const [data, setData] = useState(null);
+  const [currentDayData, setCurrentDayData] = useState(null);
   const [city, setCity] = useState("Rotterdam");
   const [submitting, setSubmitting] = useState(true);
   const [isEmpty, setIsEmpty] = useState(true);
@@ -17,7 +18,7 @@ export default function Weather() {
   const getData = useCallback(async () => {
     try {
       const { data } = await axios.get(url);
-      setData({
+      setCurrentDayData({
         isReady: true,
         date: new Date(data.dt * 1000),
         temperature: Math.round(data.main.temp),
@@ -26,6 +27,7 @@ export default function Weather() {
         icon: data.weather[0].icon,
         description: data.weather[0].description,
         city: data.name,
+        coordinates: data.coord,
       });
     } catch (error) {
       console.log(error.message);
@@ -77,7 +79,17 @@ export default function Weather() {
         value={city}
         onFocusHandle={onFocusHandle}
       />
-      {data ? <CurrentWeather data={data} /> : "Loading"}
+      {currentDayData ? (
+        <>
+          <CurrentWeather currentDayData={currentDayData} />
+          <WeatherForecast
+            coordinates={currentDayData.coordinates}
+            apiKey={apiKey}
+          />
+        </>
+      ) : (
+        "Loading"
+      )}
     </>
   );
 }

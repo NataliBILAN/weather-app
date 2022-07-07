@@ -1,8 +1,8 @@
 import React from "react";
 
-import Header from "./Header/index";
-import Weather from "./Weather/index";
-import Footer from "./Footer/index";
+import Header from "./components/Header/index";
+import Weather from "./components/Weather/index";
+import Footer from "./components/Footer/index";
 
 import "./App.css";
 

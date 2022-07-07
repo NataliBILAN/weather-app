@@ -1,3 +1,5 @@
+
+
 .forecast-list {
   display: flex;
   justify-content: space-between;
@@ -17,8 +19,6 @@
   cursor: pointer;
   border-radius: 4px;
 }
-
-
 
 .forecast-list {
   list-style: none;
@@ -46,4 +46,24 @@
 
 .forecast-temperature-min {
   color: #158cba;
+}
+
+.temperatures {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  font-weight: bold;
+}
+
+.temperature-min {
+  color: #158cba;
+}
+
+.temperature-max {
+  color: crimson;
+}
+
+.weak-day {
+  text-transform: uppercase;
+  font-weight: bold;
 }
